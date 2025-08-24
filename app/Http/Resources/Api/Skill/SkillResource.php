@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Resources\Api\User;
+namespace App\Http\Resources\Api\Skill;
 
-use App\Http\Resources\Api\Profile\ProfileResource;
-use App\Models\User;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @mixin User
+ * @mixin Skill
  */
-class UserResource extends JsonResource
+
+class SkillResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -22,9 +22,7 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->email,
-            'created_at' => $this->created_at,
-            //'profile' => !empty($this->profile) ? new ProfileResource($this->profile) : null,
+            'description' => $this->description
         ];
     }
 }

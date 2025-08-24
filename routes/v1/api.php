@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('users/active', [UserController::class, 'active'])->name('users.active');
     Route::get('users/all', [UserController::class, 'all'])->name('users.all');
     Route::apiResource('users', UserController::class)->names('users');
+
+    // Profile
+    Route::apiResource('profiles', ProfileController::class)->names('profiles');
+
+    // Skill
+
 });

@@ -56,7 +56,7 @@ class AuthController extends BaseApiController
         $token = $this->authService->refresh();
 
         return $this->successResponse([
-            'token' => $token,
+            'refresh_token' => $token,
             'token_type' => 'bearer',
         ]);
     }
