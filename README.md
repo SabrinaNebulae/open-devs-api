@@ -1,4 +1,4 @@
-# DevLink 🚀
+# Open Devs 🚀
 
 Une mini-plateforme pour connecter les développeurs qui militent pour l'internet libre et l'Open Source.
 
