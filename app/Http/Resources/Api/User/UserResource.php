@@ -24,7 +24,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'created_at' => $this->created_at,
-            //'profile' => !empty($this->profile) ? new ProfileResource($this->profile) : null,
+            'profile' => !empty($this->profile) ? new ProfileResource($this->profile) : null,
         ];
     }
 }
