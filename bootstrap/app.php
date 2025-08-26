@@ -13,7 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->use([
             \Illuminate\Http\Middleware\HandleCors::class,
+            //\Rakutentech\LaravelRequestDocs\LaravelRequestDocsMiddleware::class,
         ]);
+
+        /*$middleware->api(append: [
+            \Rakutentech\LaravelRequestDocs\LaravelRequestDocsMiddleware::class,
+        ]);*/
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

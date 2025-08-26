@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileIndexRequest extends FormRequest
+class ProfileUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,11 @@ class ProfileIndexRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'search' => 'nullable|string',
-            'skills' => 'array',
-            'skills.*' => 'integer|exists:skills,id',
-            'order_by' => 'string',
-            'direction' => 'string|in:asc,desc',
-            'per_page' => 'integer',
+            'bio' => 'nullable|string',
+            'github_url' => 'nullable|string',
+            'linkedin_url' => 'nullable|string',
+            'website_url' => 'nullable|string',
+            'skills' => 'nullable|array',
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileIndexRequest extends FormRequest
+class SkillIndexRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,6 @@ class ProfileIndexRequest extends FormRequest
     {
         return [
             'search' => 'nullable|string',
-            'skills' => 'array',
-            'skills.*' => 'integer|exists:skills,id',
-            'order_by' => 'string',
-            'direction' => 'string|in:asc,desc',
-            'per_page' => 'integer',
         ];
     }
 }
