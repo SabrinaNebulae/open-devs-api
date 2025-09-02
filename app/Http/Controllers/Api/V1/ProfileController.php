@@ -25,7 +25,8 @@ class ProfileController extends BaseApiController
         }
 
         $params = $request->validated();
-        $profiles = Profile::query()->with(['user', 'skills']);
+        $profiles = Profile::query()
+            ->whereNot('id', $user->profile->id);
 
         if (!empty($params['search'])) {
             $profiles = $profiles->whereHas('skills', function ($query) use ($params) {
