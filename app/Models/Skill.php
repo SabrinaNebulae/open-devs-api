@@ -12,7 +12,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property int $id
  * @property string $name
  * @property string $description
- *
+ * @property \Carbon\CarbonImmutable|null $created_at
+ * @property \Carbon\CarbonImmutable|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Profile> $profiles
+ * @property-read int|null $profiles_count
+ * @method static \Database\Factories\SkillFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Skill whereUpdatedAt($value)
  * @mixin Eloquent
  */
 class Skill extends Model

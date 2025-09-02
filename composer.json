@@ -20,7 +20,7 @@
         "tymon/jwt-auth": "^2.2"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.5",
+        "barryvdh/laravel-ide-helper": "^3.6",
         "captainhook/captainhook": "^5.25",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.0",

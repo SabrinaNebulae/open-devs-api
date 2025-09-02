@@ -8,17 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Database\Factories\ProfileFactory;
-use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
  * @property int $user_id
- * @property string $bio
- * @property string $github_url
- * @property string $linkedin_url
- * @property string $website_url
- * @property Carbon|null $created_at
- *
+ * @property string|null $bio
+ * @property string|null $github_url
+ * @property string|null $linkedin_url
+ * @property string|null $website_url
+ * @property \Carbon\CarbonImmutable|null $created_at
+ * @property \Carbon\CarbonImmutable|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Skill> $skills
+ * @property-read int|null $skills_count
+ * @property-read \App\Models\User $user
+ * @method static \Database\Factories\ProfileFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereBio($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereGithubUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereLinkedinUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereWebsiteUrl($value)
  * @mixin Eloquent
  */
 
@@ -53,6 +69,13 @@ class Profile extends Model
             'created_at' => 'datetime:d-m-Y h:i:s'
         ];
     }
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var string|array
+     */
+    protected $with = ['user', 'skills'];
 
     public function user(): BelongsTo
     {
